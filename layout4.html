@@ -10,6 +10,7 @@
         margin: 0;
       }
       h2 {
+        margin-top: 0;
         margin-left: 1em;
         font-weight: 900;
       }
@@ -19,7 +20,6 @@
         flex-direction: row;
         height: 100vh;
         width: 100vw;
-        flex-grow: 1;
       }
 
       header {
@@ -27,8 +27,6 @@
         color: white;
         height: 20vh;
         width: 100%;
-        margin-top: -5vh;
-        line-height: 10vh;
       }
 
       #nav {
@@ -37,29 +35,61 @@
         display: flex;
         flex-direction: column;
         height: 100vh;
-        width: 10%;
-        flex-basis: 10%;
-        /* flex-grow: 1; */
+        width: 20%;
+        flex-basis: 15%;
       }
 
       #article {
         background-color: aliceblue;
         color: black;
-        flex-basis: 90%;
+        flex-basis: 80%;
       }
       #aside {
         background-color: blueviolet;
         color: aliceblue;
         flex-basis: 20%;
-        display: flex;
         flex-direction: column;
       }
 
-      #footer {
+      footer {
         background-color: black;
         color: aliceblue;
-        flex-basis: 30%;
-        min-height: 20%;
+        height: 20vh;
+      }
+
+      @media (min-width: 575px) {
+        .tablet-view {
+          display: flex;
+          flex-direction: row;
+        }
+
+        .article {
+          height: 95%;
+          flex-grow: 5;
+        }
+        .aside {
+          height: 95%;
+          flex-grow: 1;
+        }
+      }
+
+      @media (min-width: 767px) {
+        main {
+          display: flex;
+        }
+        .nav {
+          height: 92%;
+          width: 17%;
+        }
+        .article {
+          height: 106%;
+        }
+        .aside {
+          height: 106%;
+        }
+        .tablet-view {
+          width: 100%;
+        }
       }
     </style>
   </head>
@@ -72,6 +102,6 @@
       <div id="article"><h2>Article</h2></div>
       <div id="aside"><h2>Aside</h2></div>
     </div>
-    <footer><h2>Footer</h2></footer>
+    <footer id="footer"><h2>Footer</h2></footer>
   </body>
 </html>
