@@ -7,36 +7,72 @@
     <link rel="stylesheet" href="./normalize.css" />
     <title>Vertical Grid</title>
     <style>
+      body {
+        height: 100vh;
+      }
+
       #main {
+        display: flex;
+        height: 100vh;
+      }
+
+      .box {
+        background-color: #c22177;
+        width: 100px;
+        height: 100%;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 4px;
+        flex-shrink: 1;
+      }
+
+      .a1 {
+        height: 97%;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+      }
+
+      .a2 {
+        font-weight: bold;
+        font-size: 20px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-between; */
+        align-items: space-between;
+        flex-grow: 1;
       }
     </style>
   </head>
   <body>
     <div id="main">
-      <div id="a1"><div class="box">1</div></div>
-      <div id="a2">
+      <div class="a1">
+        <div class="box">1</div>
+      </div>
+      <div class="a2">
         <div class="box">1</div>
         <div class="box">2</div>
       </div>
-      <div id="a3">
+      <div class="a2">
         <div class="box">1</div>
         <div class="box">2</div>
         <div class="box">3</div>
       </div>
-      <div id="a4">
+      <div class="a2">
         <div class="box">1</div>
         <div class="box">2</div>
         <div class="box">3</div>
         <div class="box">4</div>
       </div>
-      <div id="a5">
+      <div class="a2">
         <div class="box">1</div>
         <div class="box">2</div>
         <div class="box">3</div>
         <div class="box">4</div>
         <div class="box">5</div>
       </div>
-      <div id="a6">
+      <div class="a2">
         <div class="box">1</div>
         <div class="box">2</div>
         <div class="box">3</div>
@@ -45,7 +81,7 @@
         <div class="box">6</div>
       </div>
 
-      <div id="a7">
+      <div class="a2">
         <div class="box">1</div>
         <div class="box">2</div>
         <div class="box">3</div>
@@ -55,7 +91,7 @@
         <div class="box">7</div>
       </div>
 
-      <div id="a8">
+      <div class="a2">
         <div class="box">1</div>
         <div class="box">2</div>
         <div class="box">3</div>
@@ -65,7 +101,7 @@
         <div class="box">7</div>
         <div class="box">8</div>
       </div>
-      <div id="a9">
+      <div class="a2">
         <div class="box">1</div>
         <div class="box">2</div>
         <div class="box">3</div>
@@ -76,7 +112,7 @@
         <div class="box">8</div>
         <div class="box">9</div>
       </div>
-      <div id="a10">
+      <div class="a2">
         <div class="box">1</div>
         <div class="box">2</div>
         <div class="box">3</div>
@@ -88,7 +124,7 @@
         <div class="box">9</div>
         <div class="box">10</div>
       </div>
-      <div id="a11">
+      <div class="a2">
         <div class="box">1</div>
         <div class="box">2</div>
         <div class="box">3</div>
@@ -102,7 +138,7 @@
         <div class="box">11</div>
       </div>
 
-      <div id="a12">
+      <div class="a2">
         <div class="box">1</div>
         <div class="box">2</div>
         <div class="box">3</div>
