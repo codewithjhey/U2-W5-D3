@@ -6,9 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Layout 4</title>
     <style>
+      * {
+        box-sizing: border-box;
+      }
+
       body {
+        display: flex;
+        flex-direction: column;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        min-height: 100vh;
+        font-size: 26px;
         margin: 0;
       }
+
+      header,
+      footer {
+        color: white;
+        background: #111023;
+        height: 20vh;
+      }
+
+      header,
+      footer,
+      article,
+      nav,
+      aside {
+        padding: 1em;
+      }
+
       h2 {
         padding-top: 20px;
         margin-top: 0;
@@ -18,91 +43,74 @@
 
       #main-container {
         display: flex;
-        flex-direction: row;
-        height: 100vh;
-        width: 100vw;
+        flex-direction: column;
+        flex: 10;
+        min-height: 100vh;
       }
 
-      header {
-        background-color: black;
-        color: white;
-        height: 20vh;
-        width: 100%;
+      #main-container > .content {
+        display: flex;
+        flex: 1;
       }
 
-      #nav {
+      #main-container > .content > nav {
         background-color: deeppink;
         color: white;
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-        width: 20%;
-        flex-basis: 15%;
+        flex: 1;
       }
 
-      #article {
+      #main-container > .content > article {
         background-color: aliceblue;
         color: black;
-        flex-basis: 80%;
+        flex: 5;
       }
-      #aside {
+
+      #main-container > .content > aside {
         background-color: blueviolet;
         color: aliceblue;
-        flex-basis: 20%;
+        flex: 1;
         flex-direction: column;
       }
 
-      footer {
-        background-color: black;
-        color: aliceblue;
-        height: 20vh;
-      }
-
-      @media (min-width: 575px) {
-        .tablet-view {
-          display: flex;
-          flex-direction: row;
+      @media (max-width: 575px) {
+        #main-container > .content {
+          flex-direction: column;
         }
-
-        .article {
-          height: 95%;
-          flex-grow: 5;
-        }
-        .aside {
-          height: 95%;
-          flex-grow: 1;
+        #main-container > .content > article {
+          flex: 50;
         }
       }
 
-      @media (min-width: 767px) {
-        main {
+      @media (min-width: 576px) and (max-width: 767px) {
+        #main-container > .content {
+          flex-wrap: wrap;
+        }
+
+        #main-container > .content > nav {
+          flex-basis: 100%;
+          height: 10vh;
           display: flex;
+          align-items: center;
         }
-        .nav {
-          height: 92%;
-          width: 17%;
-        }
-        .article {
-          height: 106%;
-        }
-        .aside {
-          height: 106%;
-        }
-        .tablet-view {
-          width: 100%;
+
+        #main-container > .content > article {
+          min-height: calc(100vh - 30vh);
+          flex: 3;
         }
       }
     </style>
   </head>
   <body>
-    <header>
-      <h2>Header</h2>
-    </header>
     <div id="main-container">
-      <div id="nav"><h2>Nav</h2></div>
-      <div id="article" class="tablet-view"><h2>Article</h2></div>
-      <div id="aside" class="tablet-view"><h2>Aside</h2></div>
+      <header>Header</header>
+
+      <div class="content">
+        <nav>Nav</nav>
+        <article>Article</article>
+        <aside>Aside</aside>
+      </div>
     </div>
-    <footer id="footer"><h2>Footer</h2></footer>
+
+    <footer>Footer</footer>
   </body>
 </html>
